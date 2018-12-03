@@ -1,7 +1,7 @@
 highestW = 0
 highestH = 0
 totalSqIFabricWithinTwoClaims = 0
-fabric = [[0] * 1000] * 1000
+fabric = [[0 for x in range(1000)] for y in range(1000)]
 
 claims = open('resources/claims.txt', 'r')
 
@@ -25,10 +25,10 @@ for claim in claims:
                 .strip())
 
     while (height + inchesFromTop > len(fabric)):
-        fabric.append([0] * 1000)
+        fabric.append([0 for x in range(1000)])
     while (width + inchesFromLeft > len(fabric[0])):
         for row in fabric:
-            row.append([0] * 1000)
+            row.append([0 for x in range(1000)])
 
     for h in range(height):
         for w in range(width):
